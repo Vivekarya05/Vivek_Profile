@@ -93,12 +93,62 @@ const projects = [
   },
 ];
 
+const careerData = {
+  2026: {
+    period: "Mar 2026 - Present",
+    title: "Research Assistant, Transforming Energy Markets Research Centre",
+    summary:
+      "Focused on Australian NEM analytics: AEMO datasets, forecasting workflows, dispatch pricing behaviour, renewable integration, demand trends, and market volatility.",
+    kpis: [
+      ["AEMO", "Market data processing"],
+      ["NEM", "Dispatch and volatility analysis"],
+      ["Power BI", "Research reporting"],
+    ],
+  },
+  2025: {
+    period: "Mar 2025 - Apr 2026",
+    title: "Business Analyst - Finance & Operations, Western Sydney University",
+    summary:
+      "Built analytical dashboards and reporting workflows that improved visibility across finance, operations, and stakeholder decision-making.",
+    kpis: [
+      ["Power BI", "Operational dashboards"],
+      ["DAX", "Performance metrics"],
+      ["WSU", "Planning support"],
+    ],
+  },
+  2022: {
+    period: "Nov 2022 - Jun 2024",
+    title: "ICT Business Analyst, CentraHub Pvt Ltd",
+    summary:
+      "Automated SQL-driven workflows, delivered KPI dashboards across India, Middle East, and Canada regions, and reduced response times by 35%.",
+    kpis: [
+      ["35%", "Response-time reduction"],
+      ["SQL", "Workflow automation"],
+      ["3 regions", "Operations reporting"],
+    ],
+  },
+  2020: {
+    period: "Sep 2020 - Nov 2022",
+    title: "Senior Project Engineer - Energy Systems, Indian Immunologicals Pvt Ltd",
+    summary:
+      "Optimised HVAC and energy-intensive utility systems, monitored industrial energy performance, and worked with SCADA/PLC systems for operations and compliance.",
+    kpis: [
+      ["HVAC", "Energy optimisation"],
+      ["SCADA", "Operational monitoring"],
+      ["Utilities", "Performance analysis"],
+    ],
+  },
+};
+
 const panel = document.querySelector("#labPanel");
 const tabs = document.querySelectorAll(".lab-tab");
 const grid = document.querySelector("#projectGrid");
 const filterButtons = document.querySelectorAll(".filter-pill");
 const chart = document.querySelector("#marketChart");
 const ctx = chart.getContext("2d");
+const careerFocus = document.querySelector("#careerFocus");
+const careerTabs = document.querySelectorAll(".career-year-tab");
+const careerNodes = document.querySelectorAll(".career-node");
 
 function renderLab(mode) {
   const item = labContent[mode];
@@ -139,6 +189,38 @@ function renderProjects(filter = "all") {
       `
     )
     .join("");
+}
+
+function renderCareer(year = "2026") {
+  const item = careerData[year];
+  if (!careerFocus || !item) return;
+
+  careerFocus.innerHTML = `
+    <div>
+      <span class="timeline-date">${item.period}</span>
+      <h3>${item.title}</h3>
+      <p>${item.summary}</p>
+    </div>
+    <div class="career-kpi-grid">
+      ${item.kpis
+        .map(
+          ([value, label]) => `
+            <div class="career-kpi">
+              <strong>${value}</strong>
+              <span>${label}</span>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+
+  careerTabs.forEach((tab) => {
+    const isActive = tab.dataset.career === year;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+  careerNodes.forEach((node) => node.classList.toggle("active", node.dataset.career === year));
 }
 
 function drawChart(frame = 0) {
@@ -219,6 +301,15 @@ filterButtons.forEach((button) => {
   });
 });
 
+careerTabs.forEach((tab) => {
+  tab.addEventListener("click", () => renderCareer(tab.dataset.career));
+});
+
+careerNodes.forEach((node) => {
+  node.addEventListener("click", () => renderCareer(node.dataset.career));
+});
+
 renderLab("pipeline");
 renderProjects();
+renderCareer("2026");
 drawChart();

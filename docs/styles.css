@@ -377,6 +377,14 @@ h3 {
   margin-bottom: 28px;
 }
 
+.section-intro {
+  max-width: 680px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
 .dashboard-links-section {
   padding-top: clamp(52px, 7vw, 88px);
 }
@@ -396,6 +404,12 @@ h3 {
   border-radius: var(--radius);
   background: var(--white);
   box-shadow: 0 16px 44px rgba(14, 65, 59, 0.08);
+}
+
+.dashboard-link-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(14, 124, 115, 0.32);
+  box-shadow: 0 22px 56px rgba(14, 65, 59, 0.14);
 }
 
 .dashboard-link-card.featured {
@@ -439,6 +453,27 @@ h3 {
 }
 
 .dashboard-link-card.featured .open-link {
+  color: white;
+}
+
+.dashboard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.dashboard-tags span {
+  border-radius: 999px;
+  background: #edf5f1;
+  color: #30534d;
+  padding: 6px 9px;
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.dashboard-link-card.featured .dashboard-tags span {
+  background: rgba(255, 255, 255, 0.14);
   color: white;
 }
 
@@ -595,28 +630,179 @@ h3 {
   font-weight: 900;
 }
 
-.timeline {
+.career-visual {
   display: grid;
-  gap: 16px;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 22px;
 }
 
-.timeline article {
-  position: relative;
-  padding: 24px 24px 24px 34px;
+.career-year-rail {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.career-year-tab {
+  display: grid;
+  gap: 6px;
+  min-height: 84px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
+  color: var(--ink);
+  padding: 14px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(14, 65, 59, 0.06);
 }
 
-.timeline article::before {
+.career-year-tab span {
+  color: var(--teal-dark);
+  font-size: 1.45rem;
+  font-weight: 950;
+}
+
+.career-year-tab small {
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.career-year-tab.active {
+  border-color: var(--teal);
+  background: var(--teal-dark);
+  color: white;
+}
+
+.career-year-tab.active span,
+.career-year-tab.active small {
+  color: white;
+}
+
+.career-main {
+  display: grid;
+  gap: 18px;
+}
+
+.career-focus-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
+  gap: 20px;
+  min-height: 270px;
+  border-radius: var(--radius);
+  padding: clamp(20px, 3vw, 30px);
+  background:
+    linear-gradient(140deg, rgba(16, 47, 50, 0.97), rgba(14, 124, 115, 0.9)),
+    #102f32;
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.career-focus-card p {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.career-focus-card .timeline-date {
+  color: #8ff0c2;
+}
+
+.career-kpi-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.career-kpi {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.career-kpi strong,
+.career-kpi span {
+  display: block;
+}
+
+.career-kpi strong {
+  font-size: 1.12rem;
+}
+
+.career-kpi span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.career-path {
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+
+.career-path::before {
   content: "";
   position: absolute;
-  top: 26px;
-  left: 16px;
-  width: 8px;
-  height: calc(100% - 52px);
+  top: 18px;
+  bottom: 18px;
+  left: 42px;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--teal), var(--amber), var(--coral));
+}
+
+.career-node {
+  position: relative;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-height: 128px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 18px;
+  cursor: pointer;
+  box-shadow: 0 14px 38px rgba(14, 65, 59, 0.07);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.career-node:hover,
+.career-node.active {
+  transform: translateY(-2px);
+  border-color: rgba(14, 124, 115, 0.35);
+  box-shadow: 0 20px 52px rgba(14, 65, 59, 0.12);
+}
+
+.career-year {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  border: 5px solid var(--paper);
   border-radius: 999px;
   background: var(--teal);
+  color: white;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.career-node:nth-child(2) .career-year {
+  background: var(--blue);
+}
+
+.career-node:nth-child(3) .career-year {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.career-node:nth-child(4) .career-year {
+  background: var(--coral);
 }
 
 .timeline-date,
@@ -631,10 +817,68 @@ h3 {
 }
 
 .timeline p,
+.career-node p,
 .roadmap p,
-.skill-matrix p {
+.skill-matrix p,
+.education-card p {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.education-card {
+  display: grid;
+  min-height: 260px;
+  align-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 22px;
+  box-shadow: 0 16px 44px rgba(14, 65, 59, 0.08);
+}
+
+.education-card.featured {
+  background:
+    linear-gradient(140deg, rgba(36, 104, 168, 0.94), rgba(14, 124, 115, 0.88)),
+    var(--blue);
+  color: white;
+}
+
+.education-card.featured p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.education-year {
+  color: var(--coral);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.education-card.featured .education-year {
+  color: #8ff0c2;
+}
+
+.education-tag {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--teal-dark);
+  padding: 7px 10px;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.education-card.featured .education-tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
 }
 
 .roadmap {
@@ -703,6 +947,7 @@ footer {
 @media (max-width: 1120px) {
   .dashboard-hero,
   .lab-panel,
+  .career-focus-card,
   .contact-section {
     grid-template-columns: 1fr;
   }
@@ -714,6 +959,7 @@ footer {
   .project-grid,
   .roadmap,
   .skill-matrix,
+  .education-grid,
   .dashboard-link-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -732,8 +978,9 @@ footer {
 
   .nav-links {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px 18px;
     font-size: 0.84rem;
   }
 
@@ -750,11 +997,21 @@ footer {
   .project-grid,
   .roadmap,
   .skill-matrix,
+  .education-grid,
   .dashboard-link-grid,
   .metrics-band,
   .lab-grid,
+  .career-visual,
   .process-flow {
     grid-template-columns: 1fr;
+  }
+
+  .career-node {
+    grid-template-columns: 1fr;
+  }
+
+  .career-path::before {
+    display: none;
   }
 
   .lab-panel {
