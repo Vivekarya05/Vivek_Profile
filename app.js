@@ -1,95 +1,134 @@
-const labContent = {
-  pipeline: {
-    title: "AEMO NEMWeb ETL pipeline",
-    copy:
-      "Automated extraction, validation, staging, and PostgreSQL loading for NEMWeb datasets. The workflow is built around data integrity checks, retry logic, traceability, and market-ready structures for forecasting and operational analytics.",
-    stat: "ETL",
-    statText: "Raw AEMO market files transformed into analysis-ready tables.",
-    flow: ["Extract NEMWeb files", "Validate and stage", "Load PostgreSQL", "Power dashboards and models"],
+const workflowContent = {
+  foundation: {
+    title: "Data Foundation",
+    objective: "Turn raw AEMO/NEM files into trusted analytical data structures.",
+    inputs: "NEMWeb files, dispatch data, price series, generator and constraint signals.",
+    methods: "ETL validation, staging, PostgreSQL modelling, audit checks, repeatable data loading.",
+    output: "Clean market tables that support dashboards, forecasting, and operational analysis.",
+    value: "Reduces manual data friction and gives analysts a reliable market-data base.",
   },
-  forecasting: {
-    title: "Demand and price forecasting",
-    copy:
-      "Short-term electricity demand and 5-minute price forecasting using ARIMA, XGBoost, and LSTM models. Feature engineering captures seasonality, demand peaks, renewable intermittency, negative pricing, and volatility patterns.",
-    stat: "5-min",
-    statText: "Dispatch interval focus for price behaviour and market volatility.",
-    flow: ["Build time features", "Train ARIMA/XGBoost/LSTM", "Validate against recent data", "Explain market drivers"],
+  understanding: {
+    title: "Market Understanding",
+    objective: "Explain what happened in the market before jumping into models.",
+    inputs: "Regional price spreads, dispatch intervals, interconnector behaviour, generation mix, constraints.",
+    methods: "Event slicing, divergence analysis, volatility scans, and market driver comparison.",
+    output: "Clear narratives on price behaviour, congestion, renewable impact, and operational patterns.",
+    value: "Helps stakeholders connect raw market events to practical decision context.",
   },
-  trading: {
-    title: "BESS trading intelligence",
-    copy:
-      "Battery storage strategy work focused on price-signal analysis, arbitrage simulation, operational constraints, and future extensions into FCAS co-optimisation and virtual power plant dispatch pathways.",
-    stat: "BESS",
-    statText: "Trading simulations linked to operational market constraints.",
-    flow: ["Read price signals", "Model charge windows", "Simulate dispatch", "Compare arbitrage value"],
+  modelling: {
+    title: "Modelling & Forecasting",
+    objective: "Build forecast-ready features and scenario views for demand and price behaviour.",
+    inputs: "Historical NEM time series, engineered seasonality features, price volatility indicators.",
+    methods: "ARIMA, XGBoost, LSTM, feature engineering, validation windows, scenario comparison.",
+    output: "Forecasting workflows and benchmark views for market behaviour analysis.",
+    value: "Supports forward-looking analysis for trading, operations, and research decisions.",
   },
-  research: {
-    title: "Capstone and research direction",
-    copy:
-      "The capstone pathway connects market data pipelines, forecasting models, bid-stack tooling, and dashboard delivery into a stronger contribution on NSW wholesale electricity market drivers.",
-    stat: "NSW",
-    statText: "Wholesale electricity market driver analysis as the capstone anchor.",
-    flow: ["Validate models", "Update Q1 2026 data", "Package dashboards", "Publish research findings"],
+  decision: {
+    title: "Decision Intelligence",
+    objective: "Convert analysis into actions, trade-offs, and portfolio direction.",
+    inputs: "Dashboard outputs, model signals, price events, constraints, generator behaviour, BESS scenarios.",
+    methods: "Decision framing, KPI selection, risk-event ranking, arbitrage and dispatch logic.",
+    output: "Decision-ready insights for market operations, strategy, and storage analytics.",
+    value: "Moves the work from descriptive reporting into market intelligence.",
+  },
+  communication: {
+    title: "Dashboard Communication",
+    objective: "Make complex market behaviour easy to scan, compare, and explain.",
+    inputs: "Power BI views, web dashboards, research summaries, project decks, stakeholder questions.",
+    methods: "Visual hierarchy, interaction design, metric cards, drill-downs, and narrative dashboards.",
+    output: "Executive-ready and analyst-ready dashboards for recurring market review.",
+    value: "Makes technical work visible, credible, and easier to use in decisions.",
   },
 };
 
 const projects = [
   {
-    title: "NEM Market Intelligence & BESS Trading Platform",
-    category: "trading",
-    accent: "teal",
-    summary:
-      "End-to-end energy market analytics platform integrating AEMO data pipelines, forecasting models, operational dashboards, and BESS arbitrage simulations.",
-    stack: ["AEMO", "Python", "BESS", "Trading analytics"],
-  },
-  {
     title: "AEMO NEMWeb Data Pipeline",
     category: "engineering",
-    accent: "blue",
-    summary:
-      "Automated ETL workflow that extracts, validates, structures, and loads NEMWeb datasets into PostgreSQL for forecasting and market analysis.",
-    stack: ["SQL", "PostgreSQL", "ETL", "Validation"],
+    accent: "teal",
     url: "https://vivekarya05.github.io/nemweb-etl-pipeline/",
+    stack: ["AEMO", "Python", "SQL", "PostgreSQL"],
+    story: {
+      Problem: "NEMWeb data needs repeatable ingestion and validation before analysis.",
+      Data: "AEMO NEMWeb market files and structured dispatch datasets.",
+      Method: "Automated extraction, validation, staging, and PostgreSQL loading.",
+      Insight: "Reliable tables reduce manual handling and enable faster market analytics.",
+      "Decision Value": "Creates the foundation for forecasting, dashboards, and operational review.",
+      Tools: "Python, SQL, PostgreSQL, AEMO NEMWeb",
+    },
+  },
+  {
+    title: "Price Divergence Dashboard",
+    category: "dashboards",
+    accent: "blue",
+    url: "https://vivekarya05.github.io/nem-network-constraints-price-divergence/",
+    stack: ["Price spread", "Constraints", "NEM", "Dashboard"],
+    story: {
+      Problem: "Regional prices can diverge quickly, but the driver is not always obvious.",
+      Data: "Regional price series, interconnector behaviour, and constraint indicators.",
+      Method: "Spread analysis, volatility event slicing, and congestion signal comparison.",
+      Insight: "Highlights regional separation and market-event behaviour.",
+      "Decision Value": "Supports fast identification of price-risk and operational stress points.",
+      Tools: "Python, JavaScript, AEMO data, dashboard UI",
+    },
+  },
+  {
+    title: "Generator Behaviour & Market Response Intelligence",
+    category: "dashboards",
+    accent: "amber",
+    url: "https://vivekarya05.github.io/nem-generator-behaviour-market-response-intelligence/",
+    stack: ["Dispatch", "Generators", "Behaviour", "Market response"],
+    story: {
+      Problem: "Generator dispatch and response patterns need to be connected to market outcomes.",
+      Data: "Generation output, dispatch behaviour, and market response indicators.",
+      Method: "Unit behaviour comparison, generation-mix analysis, and event review.",
+      Insight: "Shows how generation behaviour changes across market conditions.",
+      "Decision Value": "Helps interpret supply-side dynamics behind price and dispatch outcomes.",
+      Tools: "AEMO data, JavaScript, analytics dashboards",
+    },
+  },
+  {
+    title: "Constraint Analysis Dashboard",
+    category: "dashboards",
+    accent: "coral",
+    url: "https://vivekarya05.github.io/nem-network-constraints-price-divergence/",
+    stack: ["Binding events", "Congestion", "Dispatch impact", "NEM"],
+    story: {
+      Problem: "Binding constraints and congestion can shape dispatch and regional prices.",
+      Data: "Constraint events, regional price signals, and market event indicators.",
+      Method: "Binding-event review, congestion mapping, and impact interpretation.",
+      Insight: "Makes network-driven price and dispatch behaviour easier to explain.",
+      "Decision Value": "Improves market-event diagnosis for analysts and stakeholders.",
+      Tools: "AEMO data, constraint analysis, dashboard UI",
+    },
   },
   {
     title: "Electricity Demand Forecasting",
     category: "forecasting",
-    accent: "amber",
-    summary:
-      "Short-term NEM demand forecasting with ARIMA, XGBoost, and LSTM models using seasonality, peak-demand, and operational time-series features.",
-    stack: ["ARIMA", "XGBoost", "LSTM", "AEMO"],
-  },
-  {
-    title: "Electricity Price Forecasting & Market Behaviour",
-    category: "forecasting",
-    accent: "coral",
-    summary:
-      "5-minute price forecasting and volatility analysis focused on negative pricing, renewable intermittency, and supply-demand imbalance impacts.",
-    stack: ["LSTM", "Volatility", "Negative pricing", "NEM"],
-  },
-  {
-    title: "Power BI Market and Operations Dashboards",
-    category: "dashboards",
     accent: "teal",
-    summary:
-      "Research and business dashboards that improve visibility into electricity market insights, renewable integration, finance, and operational performance.",
-    stack: ["Power BI", "DAX", "Reporting", "Stakeholders"],
+    stack: ["ARIMA", "XGBoost", "LSTM", "Time series"],
+    story: {
+      Problem: "Short-term demand patterns need robust features and validation.",
+      Data: "AEMO demand time series and operational patterns.",
+      Method: "Seasonality features, ARIMA, XGBoost, LSTM, and validation windows.",
+      Insight: "Demand peaks and recurring patterns become easier to forecast and explain.",
+      "Decision Value": "Supports operational planning and market modelling workflows.",
+      Tools: "Python, Pandas, XGBoost, TensorFlow/Keras",
+    },
   },
   {
-    title: "NSW Wholesale Market Capstone",
+    title: "BESS Trading Intelligence Roadmap",
     category: "trading",
     accent: "blue",
-    summary:
-      "Research pathway to validate forecasting models, integrate Streamlit and bid-stack tools, and publish findings on NSW market drivers.",
-    stack: ["Capstone", "Streamlit", "Bid stack", "NSW"],
-  },
-  {
-    title: "Industrial Energy Systems Optimisation",
-    category: "dashboards",
-    accent: "amber",
-    summary:
-      "Operational energy performance analysis for HVAC and utility systems, supported by monitoring, validation, and SCADA/PLC exposure.",
-    stack: ["Energy systems", "SCADA", "HVAC", "Performance"],
+    stack: ["BESS", "Arbitrage", "FCAS", "Trading analytics"],
+    story: {
+      Problem: "Storage value depends on price timing, constraints, and operating limits.",
+      Data: "5-minute prices, dispatch intervals, and future FCAS/storage signals.",
+      Method: "Arbitrage simulation, scenario framing, and charge/discharge logic.",
+      Insight: "Identifies where storage analytics can become a trading decision layer.",
+      "Decision Value": "Positions the portfolio for BESS dispatch and trading strategy analysis.",
+      Tools: "Python, AEMO data, scenario analysis",
+    },
   },
 ];
 
@@ -97,8 +136,10 @@ const careerData = {
   2026: {
     period: "Mar 2026 - Present",
     title: "Research Assistant, Transforming Energy Markets Research Centre",
+    domain: "Energy market analytics and research",
     summary:
-      "Focused on Australian NEM analytics: AEMO datasets, forecasting workflows, dispatch pricing behaviour, renewable integration, demand trends, and market volatility.",
+      "Maintains AEMO datasets, supports forecasting and market modelling workflows, and builds analytical reporting for renewable integration, dispatch pricing, demand trends, and volatility.",
+    relevance: "Directly anchors the portfolio in NEM data, forecasting, constraints, and dashboard-led market intelligence.",
     kpis: [
       ["AEMO", "Market data processing"],
       ["NEM", "Dispatch and volatility analysis"],
@@ -108,8 +149,10 @@ const careerData = {
   2025: {
     period: "Mar 2025 - Apr 2026",
     title: "Business Analyst - Finance & Operations, Western Sydney University",
+    domain: "Business analytics and stakeholder reporting",
     summary:
-      "Built analytical dashboards and reporting workflows that improved visibility across finance, operations, and stakeholder decision-making.",
+      "Built Power BI dashboards and analysed workflows to improve visibility across finance, operations, and decision-making.",
+    relevance: "Strengthened dashboard storytelling, KPI design, and stakeholder-facing analytics.",
     kpis: [
       ["Power BI", "Operational dashboards"],
       ["DAX", "Performance metrics"],
@@ -119,8 +162,10 @@ const careerData = {
   2022: {
     period: "Nov 2022 - Jun 2024",
     title: "ICT Business Analyst, CentraHub Pvt Ltd",
+    domain: "Data systems and operational analytics",
     summary:
-      "Automated SQL-driven workflows, delivered KPI dashboards across India, Middle East, and Canada regions, and reduced response times by 35%.",
+      "Automated SQL-driven workflows, delivered KPI dashboards across multiple regions, and reduced response times by 35%.",
+    relevance: "Built the data automation and reporting foundation used in current energy analytics work.",
     kpis: [
       ["35%", "Response-time reduction"],
       ["SQL", "Workflow automation"],
@@ -130,8 +175,10 @@ const careerData = {
   2020: {
     period: "Sep 2020 - Nov 2022",
     title: "Senior Project Engineer - Energy Systems, Indian Immunologicals Pvt Ltd",
+    domain: "Energy systems and operations",
     summary:
       "Optimised HVAC and energy-intensive utility systems, monitored industrial energy performance, and worked with SCADA/PLC systems for operations and compliance.",
+    relevance: "Gives the portfolio a practical energy-systems base behind the analytics layer.",
     kpis: [
       ["HVAC", "Energy optimisation"],
       ["SCADA", "Operational monitoring"],
@@ -145,50 +192,67 @@ const tabs = document.querySelectorAll(".lab-tab");
 const grid = document.querySelector("#projectGrid");
 const filterButtons = document.querySelectorAll(".filter-pill");
 const chart = document.querySelector("#marketChart");
-const ctx = chart.getContext("2d");
+const ctx = chart?.getContext("2d");
 const careerFocus = document.querySelector("#careerFocus");
 const careerTabs = document.querySelectorAll(".career-year-tab");
 const careerNodes = document.querySelectorAll(".career-node");
+const modal = document.querySelector("#projectModal");
+const modalContent = document.querySelector("#modalContent");
+const modalClose = document.querySelector(".modal-close");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const themeToggle = document.querySelector(".theme-toggle");
 
-function renderLab(mode) {
-  const item = labContent[mode];
-  panel.innerHTML = `
-    <div>
-      <h3>${item.title}</h3>
-      <p>${item.copy}</p>
-      <div class="process-flow">
-        ${item.flow.map((step) => `<span>${step}</span>`).join("")}
+function renderLab(mode = "foundation") {
+  const item = workflowContent[mode];
+  if (!panel || !item) return;
+
+  panel.classList.add("switching");
+  window.setTimeout(() => {
+    panel.innerHTML = `
+      <div>
+        <span class="link-type">${item.title}</span>
+        <h3>${item.objective}</h3>
+        <p>${item.value}</p>
       </div>
-    </div>
-    <div class="lab-stat">
-      <strong>${item.stat}</strong>
-      <span>${item.statText}</span>
-    </div>
-  `;
+      <div class="workflow-grid">
+        <div><strong>Inputs</strong><span>${item.inputs}</span></div>
+        <div><strong>Methods</strong><span>${item.methods}</span></div>
+        <div><strong>Output</strong><span>${item.output}</span></div>
+        <div><strong>Business value</strong><span>${item.value}</span></div>
+      </div>
+    `;
+    panel.classList.remove("switching");
+  }, 120);
 }
 
 function renderProjects(filter = "all") {
+  if (!grid) return;
   const visible = filter === "all" ? projects : projects.filter((project) => project.category === filter);
   grid.innerHTML = visible
     .map(
-      (project) => `
-        <article class="project-card" data-accent="${project.accent}">
-          <div>
-            <h3>${project.title}</h3>
-            <p>${project.summary}</p>
-            <div class="project-meta">
-              ${project.stack.map((tag) => `<span>${tag}</span>`).join("")}
-            </div>
+      (project, index) => `
+        <article class="project-card reveal" data-accent="${project.accent}" data-project-index="${projects.indexOf(project)}">
+          <span class="link-type">${project.category}</span>
+          <h3>${project.title}</h3>
+          <div class="project-story">
+            ${Object.entries(project.story)
+              .slice(0, 5)
+              .map(([key, value]) => `<div><strong>${key}</strong><p>${value}</p></div>`)
+              .join("")}
           </div>
-          ${
-            project.url
-              ? `<a class="project-link" href="${project.url}" target="_blank" rel="noreferrer">Open demo</a>`
-              : `<span class="project-link">Portfolio project</span>`
-          }
+          <div class="project-meta">
+            ${project.stack.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <a class="project-link" href="${project.url || "#"}" ${project.url ? 'target="_blank" rel="noreferrer"' : ""}>
+            ${project.url ? "Open dashboard" : "Portfolio project"}
+          </a>
+          <button class="button ghost project-detail" type="button" data-project-index="${projects.indexOf(project)}">View details</button>
         </article>
       `
     )
     .join("");
+  observeReveals();
 }
 
 function renderCareer(year = "2026") {
@@ -200,6 +264,10 @@ function renderCareer(year = "2026") {
       <span class="timeline-date">${item.period}</span>
       <h3>${item.title}</h3>
       <p>${item.summary}</p>
+      <div class="workflow-grid">
+        <div><strong>Domain</strong><span>${item.domain}</span></div>
+        <div><strong>Energy analytics relevance</strong><span>${item.relevance}</span></div>
+      </div>
     </div>
     <div class="career-kpi-grid">
       ${item.kpis
@@ -224,11 +292,12 @@ function renderCareer(year = "2026") {
 }
 
 function drawChart(frame = 0) {
+  if (!chart || !ctx) return;
   const width = chart.width;
   const height = chart.height;
   ctx.clearRect(0, 0, width, height);
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
+  ctx.strokeStyle = "rgba(95, 215, 255, 0.14)";
   ctx.lineWidth = 1;
   for (let x = 50; x < width; x += 80) {
     ctx.beginPath();
@@ -244,9 +313,9 @@ function drawChart(frame = 0) {
   }
 
   const series = [
-    { color: "#f1aa31", offset: 0, amp: 42, label: "Price" },
-    { color: "#8ff0c2", offset: 1.7, amp: 32, label: "Demand" },
-    { color: "#ffffff", offset: 3.1, amp: 24, label: "Renewables" },
+    { color: "#5fd7ff", offset: 0, amp: 42, label: "Price" },
+    { color: "#9af5c4", offset: 1.7, amp: 32, label: "Demand" },
+    { color: "#f4bd5a", offset: 3.1, amp: 24, label: "Renewables" },
   ];
 
   series.forEach((line, index) => {
@@ -264,21 +333,73 @@ function drawChart(frame = 0) {
     ctx.stroke();
   });
 
-  ctx.fillStyle = "rgba(255, 255, 255, 0.88)";
+  ctx.fillStyle = "rgba(238, 250, 247, 0.9)";
   ctx.font = "700 16px Inter, system-ui, sans-serif";
   ctx.fillText("NEM market signal monitor", 44, 34);
 
-  series.forEach((line, index) => {
-    const x = width - 170;
-    const y = 32 + index * 28;
-    ctx.fillStyle = line.color;
-    ctx.fillRect(x, y - 10, 18, 4);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.78)";
-    ctx.font = "700 13px Inter, system-ui, sans-serif";
-    ctx.fillText(line.label, x + 28, y - 4);
-  });
-
   window.requestAnimationFrame(() => drawChart(frame + 1));
+}
+
+function openProjectModal(index) {
+  const project = projects[index];
+  if (!project || !modal || !modalContent) return;
+  modalContent.innerHTML = `
+    <span class="link-type">${project.category}</span>
+    <h2 id="modalTitle">${project.title}</h2>
+    <div class="workflow-grid">
+      ${Object.entries(project.story).map(([key, value]) => `<div><strong>${key}</strong><span>${value}</span></div>`).join("")}
+    </div>
+    <div class="dashboard-tags">${project.stack.map((tag) => `<span>${tag}</span>`).join("")}</div>
+    ${
+      project.url
+        ? `<div class="card-actions"><a href="${project.url}" target="_blank" rel="noreferrer">Open dashboard</a></div>`
+        : ""
+    }
+  `;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeProjectModal() {
+  modal?.classList.remove("open");
+  modal?.setAttribute("aria-hidden", "true");
+}
+
+function animateCounters() {
+  document.querySelectorAll(".count-up").forEach((counter) => {
+    const target = Number(counter.dataset.count || 0);
+    let value = 0;
+    const step = () => {
+      value += 1;
+      counter.textContent = String(value);
+      if (value < target) window.setTimeout(step, 120);
+    };
+    step();
+  });
+}
+
+let revealObserver;
+function observeReveals() {
+  if (revealObserver) revealObserver.disconnect();
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+}
+
+function updateActiveNav() {
+  const sections = [...document.querySelectorAll("main section[id]")];
+  const navItems = [...document.querySelectorAll(".nav-links a")];
+  const current = sections
+    .map((section) => ({ id: section.id, top: section.getBoundingClientRect().top }))
+    .filter((section) => section.top < 160)
+    .pop();
+  navItems.forEach((item) => item.classList.toggle("active", current && item.getAttribute("href") === `#${current.id}`));
 }
 
 tabs.forEach((tab) => {
@@ -301,15 +422,39 @@ filterButtons.forEach((button) => {
   });
 });
 
-careerTabs.forEach((tab) => {
-  tab.addEventListener("click", () => renderCareer(tab.dataset.career));
+careerTabs.forEach((tab) => tab.addEventListener("click", () => renderCareer(tab.dataset.career)));
+careerNodes.forEach((node) => node.addEventListener("click", () => renderCareer(node.dataset.career)));
+
+document.addEventListener("click", (event) => {
+  const detailButton = event.target.closest(".project-detail");
+  if (detailButton) openProjectModal(Number(detailButton.dataset.projectIndex));
 });
 
-careerNodes.forEach((node) => {
-  node.addEventListener("click", () => renderCareer(node.dataset.career));
+modalClose?.addEventListener("click", closeProjectModal);
+modal?.addEventListener("click", (event) => {
+  if (event.target === modal) closeProjectModal();
 });
 
-renderLab("pipeline");
+menuToggle?.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+themeToggle?.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  themeToggle.textContent = document.body.classList.contains("light") ? "Dark" : "Light";
+});
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+
+renderLab("foundation");
 renderProjects();
 renderCareer("2026");
+observeReveals();
+animateCounters();
+updateActiveNav();
 drawChart();

@@ -7,219 +7,255 @@
       name="description"
       content="Interactive digital CV and energy market analytics portfolio for Vivek Bharadwaj Aryasomayajula."
     />
-    <title>Vivek Bharadwaj | Energy Market Analytics</title>
-    <link rel="stylesheet" href="styles.css?v=career-polish-5" />
+    <title>Vivek Bharadwaj | Energy Market Intelligence Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=premium-command-centre-6" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Vivek profile home">
         <span class="brand-mark">VB</span>
-        <span>Energy Analytics</span>
+        <span>
+          <strong>Vivek Analytics</strong>
+          <small>NEM intelligence portfolio</small>
+        </span>
       </a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#dashboards">Dashboards</a>
+        <a href="#methodology">Methodology</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#experience">Timeline</a>
         <a href="#education">Education</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">Light</button>
     </header>
 
     <main id="top">
-      <section class="dashboard-hero" aria-labelledby="profile-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Australian NEM analytics | Forecasting | Trading intelligence</p>
+      <section class="hero command-centre" aria-labelledby="profile-title">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Energy market analyst command centre</p>
           <h1 id="profile-title">
             <span>Vivek Bharadwaj</span>
             <span>Aryasomayajula</span>
           </h1>
+          <p class="role-line">Energy Market Analyst | NEM Analytics | AEMO Data | Forecasting | BESS</p>
           <p class="lead">
-            Energy Market Analyst building practical intelligence from AEMO datasets, time-series forecasting,
-            renewable integration analysis, and BESS trading strategy workflows.
+            I convert AEMO/NEM market data into decision-ready insights across price behaviour, constraints,
+            generator performance, forecasting, and storage analytics.
           </p>
           <div class="hero-actions" aria-label="Profile actions">
-            <a class="button primary" href="assets/Vivek_Bharadwaj_CV.pdf" target="_blank" rel="noreferrer">
-              Download CV
-            </a>
-            <a class="button" href="assets/Energy_Market_Analytics_Portfolio.pdf" target="_blank" rel="noreferrer">
-              View Portfolio Deck
-            </a>
-            <a class="button ghost" href="https://vivekarya05.github.io/nemweb-etl-pipeline/" target="_blank" rel="noreferrer">
-              ETL Demo
-            </a>
+            <a class="button primary" href="#dashboards">View Projects</a>
+            <a class="button" href="assets/Vivek_Bharadwaj_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+            <a class="button ghost" href="https://github.com/Vivekarya05" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button ghost" href="https://linkedin.com/in/vivek-energy-analytics" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
 
-        <aside class="market-console" aria-label="Energy market profile snapshot">
+        <aside class="market-console reveal" aria-label="Energy market profile snapshot">
           <div class="console-top">
             <div>
               <span class="status-dot"></span>
-              <span class="console-label">Research focus</span>
+              <span class="console-label">Live portfolio signal</span>
             </div>
             <span class="console-tag">NEM</span>
           </div>
           <div class="signal-grid">
             <div class="signal-card">
-              <span class="signal-value">5-min</span>
-              <span class="signal-label">dispatch price analytics</span>
+              <span class="signal-value count-up" data-count="4">0</span>
+              <span class="signal-label">market dashboards</span>
             </div>
             <div class="signal-card">
               <span class="signal-value">AEMO</span>
-              <span class="signal-label">market data pipelines</span>
+              <span class="signal-label">market data foundation</span>
+            </div>
+            <div class="signal-card">
+              <span class="signal-value">5-min</span>
+              <span class="signal-label">dispatch interval focus</span>
             </div>
             <div class="signal-card">
               <span class="signal-value">BESS</span>
-              <span class="signal-label">arbitrage simulations</span>
-            </div>
-            <div class="signal-card">
-              <span class="signal-value">35%</span>
-              <span class="signal-label">workflow response-time reduction</span>
+              <span class="signal-label">trading roadmap</span>
             </div>
           </div>
-          <canvas id="marketChart" width="720" height="360" aria-label="Animated energy market signal chart"></canvas>
+          <canvas id="marketChart" width="720" height="360" aria-label="Animated NEM market signal chart"></canvas>
         </aside>
       </section>
 
-      <section class="metrics-band" aria-label="Portfolio highlights">
+      <section class="metrics-band reveal" aria-label="Portfolio highlights">
         <div>
-          <strong>Python, SQL, PostgreSQL</strong>
-          <span>Data engineering and validation</span>
+          <strong>AEMO ETL Pipeline</strong>
+          <span>Data ingestion, validation, and PostgreSQL-ready tables</span>
         </div>
         <div>
-          <strong>XGBoost, LSTM, ARIMA</strong>
-          <span>Demand and price forecasting</span>
+          <strong>Price Divergence</strong>
+          <span>Regional price spread and constraint impact analysis</span>
         </div>
         <div>
-          <strong>Power BI, DAX, Tableau</strong>
-          <span>Decision dashboards and reporting</span>
+          <strong>Generator Behaviour</strong>
+          <span>Dispatch, bidding, and market response intelligence</span>
         </div>
         <div>
-          <strong>PLEXOS Cloud</strong>
-          <span>Market modelling exposure</span>
+          <strong>BESS Roadmap</strong>
+          <span>Storage arbitrage and trading analytics extension</span>
         </div>
       </section>
 
-      <section id="dashboards" class="dashboard-links-section" aria-labelledby="dashboard-links-title">
-        <div class="section-heading">
-          <p class="eyebrow">Dashboards I built</p>
-          <h2 id="dashboard-links-title">Market analytics dashboards built around real NEM questions</h2>
+      <section id="dashboards" class="section dashboard-section" aria-labelledby="dashboard-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Dashboard projects</p>
+          <h2 id="dashboard-title">Energy market analytics products built around real NEM questions</h2>
+          <p class="section-intro">
+            Each dashboard is framed around a market decision problem: what happened, why it happened,
+            and what an analyst or operator can do with the signal.
+          </p>
         </div>
-        <div class="dashboard-link-grid">
-          <a class="dashboard-link-card featured" href="https://vivekarya05.github.io/nemweb-etl-pipeline/" target="_blank" rel="noreferrer">
+        <div class="dashboard-showcase">
+          <article class="analytics-card featured reveal" data-project="aemo-etl">
+            <div class="card-visual etl-visual" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
             <span class="link-type">Live project</span>
-            <strong>AEMO NEMWeb ETL Pipeline</strong>
-            <p>Automated NEMWeb extraction, validation, PostgreSQL staging, and analysis-ready data pipeline for market analytics workflows.</p>
+            <h3>AEMO NEMWeb ETL Pipeline</h3>
+            <p class="problem">Problem: market files need to become trusted, analysis-ready tables.</p>
+            <dl>
+              <div><dt>Data</dt><dd>AEMO NEMWeb files</dd></div>
+              <div><dt>Method</dt><dd>Extract, validate, stage, load</dd></div>
+              <div><dt>Output</dt><dd>PostgreSQL-ready datasets</dd></div>
+            </dl>
             <div class="dashboard-tags">
-              <span>AEMO data</span>
-              <span>ETL</span>
-              <span>PostgreSQL</span>
+              <span>Python</span><span>SQL</span><span>PostgreSQL</span><span>Validation</span>
             </div>
-            <span class="open-link">Open live project</span>
-          </a>
-          <a class="dashboard-link-card" href="https://vivekarya05.github.io/nem-network-constraints-price-divergence/" target="_blank" rel="noreferrer">
+            <div class="card-actions">
+              <a href="https://vivekarya05.github.io/nemweb-etl-pipeline/" target="_blank" rel="noreferrer">View dashboard</a>
+              <a href="https://github.com/Vivekarya05/nemweb-etl-pipeline" target="_blank" rel="noreferrer">GitHub repo</a>
+            </div>
+          </article>
+
+          <article class="analytics-card reveal" data-project="price-divergence">
+            <div class="card-visual spread-visual" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
             <span class="link-type">Market dashboard</span>
-            <strong>Price Divergence Dashboard</strong>
-            <p>Dashboard to identify price separation, regional divergence, volatility events, and dispatch interval behaviour across NEM regions.</p>
+            <h3>Price Divergence Dashboard</h3>
+            <p class="problem">Problem: identify regional separation, volatility events, and spread behaviour.</p>
+            <dl>
+              <div><dt>Data</dt><dd>NEM regional prices, interconnector and constraint signals</dd></div>
+              <div><dt>Method</dt><dd>Spread analysis and event slicing</dd></div>
+              <div><dt>Value</dt><dd>Highlights price-risk and congestion patterns</dd></div>
+            </dl>
             <div class="dashboard-tags">
-              <span>Price spread</span>
-              <span>Volatility</span>
-              <span>Regional analysis</span>
+              <span>Price spread</span><span>Volatility</span><span>Regional analysis</span>
             </div>
-            <span class="open-link">Open live dashboard</span>
-          </a>
-          <a class="dashboard-link-card" href="https://vivekarya05.github.io/nem-generator-behaviour-market-response-intelligence/" target="_blank" rel="noreferrer">
+            <div class="card-actions">
+              <a href="https://vivekarya05.github.io/nem-network-constraints-price-divergence/" target="_blank" rel="noreferrer">View dashboard</a>
+              <a href="https://github.com/Vivekarya05/nem-network-constraints-price-divergence" target="_blank" rel="noreferrer">GitHub repo</a>
+            </div>
+          </article>
+
+          <article class="analytics-card reveal" data-project="generator">
+            <div class="card-visual generator-visual" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
             <span class="link-type">Generator analytics</span>
-            <strong>Generator Analysis Dashboard</strong>
-            <p>Generation performance view covering unit behaviour, output patterns, renewable contribution, dispatch response, and market participation signals.</p>
+            <h3>Generator Analysis Dashboard</h3>
+            <p class="problem">Problem: explain generator dispatch behaviour and market response patterns.</p>
+            <dl>
+              <div><dt>Data</dt><dd>Generator dispatch, output, and market response signals</dd></div>
+              <div><dt>Method</dt><dd>Unit behaviour and generation-mix analysis</dd></div>
+              <div><dt>Value</dt><dd>Connects operational behaviour to market outcomes</dd></div>
+            </dl>
             <div class="dashboard-tags">
-              <span>Dispatch</span>
-              <span>Generation mix</span>
-              <span>Unit behaviour</span>
+              <span>Dispatch</span><span>Generation mix</span><span>Unit behaviour</span>
             </div>
-            <span class="open-link">Open live dashboard</span>
-          </a>
-          <a class="dashboard-link-card" href="https://vivekarya05.github.io/nem-network-constraints-price-divergence/" target="_blank" rel="noreferrer">
+            <div class="card-actions">
+              <a href="https://vivekarya05.github.io/nem-generator-behaviour-market-response-intelligence/" target="_blank" rel="noreferrer">View dashboard</a>
+              <a href="https://github.com/Vivekarya05/nem-generator-behaviour-market-response-intelligence" target="_blank" rel="noreferrer">GitHub repo</a>
+            </div>
+          </article>
+
+          <article class="analytics-card reveal" data-project="constraints">
+            <div class="card-visual constraint-visual" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
             <span class="link-type">Network constraints</span>
-            <strong>Constraint Analysis Dashboard</strong>
-            <p>Analytical view for constraint impact, binding events, congestion patterns, and operational drivers affecting prices and dispatch outcomes.</p>
+            <h3>Constraint Analysis Dashboard</h3>
+            <p class="problem">Problem: surface binding constraints, congestion, and dispatch impact.</p>
+            <dl>
+              <div><dt>Data</dt><dd>Constraint and price-event indicators</dd></div>
+              <div><dt>Method</dt><dd>Binding-event and congestion intelligence</dd></div>
+              <div><dt>Value</dt><dd>Explains operational drivers behind price outcomes</dd></div>
+            </dl>
             <div class="dashboard-tags">
-              <span>Constraints</span>
-              <span>Congestion</span>
-              <span>Dispatch impact</span>
+              <span>Constraints</span><span>Congestion</span><span>Dispatch impact</span>
             </div>
-            <span class="open-link">Open live dashboard</span>
-          </a>
+            <div class="card-actions">
+              <a href="https://vivekarya05.github.io/nem-network-constraints-price-divergence/" target="_blank" rel="noreferrer">View dashboard</a>
+              <a href="https://github.com/Vivekarya05/nem-network-constraints-price-divergence" target="_blank" rel="noreferrer">GitHub repo</a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="lab-section" aria-labelledby="lab-title">
-        <div class="section-heading">
-          <p class="eyebrow">Market intelligence lab</p>
-          <h2 id="lab-title">From raw market data to operating insight</h2>
+      <section id="methodology" class="section methodology-section" aria-labelledby="methodology-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Market intelligence workflow</p>
+          <h2 id="methodology-title">From market files to decision intelligence</h2>
         </div>
-        <div class="lab-grid">
-          <div class="lab-controls" role="tablist" aria-label="Analytics focus">
-            <button class="lab-tab active" type="button" data-mode="pipeline" role="tab" aria-selected="true">
-              Data pipeline
-            </button>
-            <button class="lab-tab" type="button" data-mode="forecasting" role="tab" aria-selected="false">
-              Forecasting
-            </button>
-            <button class="lab-tab" type="button" data-mode="trading" role="tab" aria-selected="false">
-              BESS strategy
-            </button>
-            <button class="lab-tab" type="button" data-mode="research" role="tab" aria-selected="false">
-              Capstone
-            </button>
+        <div class="methodology-shell reveal">
+          <div class="lab-controls" role="tablist" aria-label="Analytics workflow">
+            <button class="lab-tab active" type="button" data-mode="foundation" role="tab" aria-selected="true">Data Foundation</button>
+            <button class="lab-tab" type="button" data-mode="understanding" role="tab" aria-selected="false">Market Understanding</button>
+            <button class="lab-tab" type="button" data-mode="modelling" role="tab" aria-selected="false">Modelling & Forecasting</button>
+            <button class="lab-tab" type="button" data-mode="decision" role="tab" aria-selected="false">Decision Intelligence</button>
+            <button class="lab-tab" type="button" data-mode="communication" role="tab" aria-selected="false">Dashboard Communication</button>
           </div>
           <div class="lab-panel" id="labPanel" aria-live="polite"></div>
         </div>
       </section>
 
-      <section id="projects" class="projects-section" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2 id="projects-title">Projects with energy-market signal</h2>
+      <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Project storytelling</p>
+          <h2 id="projects-title">Decision-focused project portfolio</h2>
+          <p class="section-intro">Every project is framed by the analyst question, the data used, the method, and the decision value.</p>
         </div>
-        <div class="filter-row" aria-label="Project filters">
+        <div class="filter-row reveal" aria-label="Project filters">
           <button class="filter-pill active" type="button" data-filter="all">All</button>
           <button class="filter-pill" type="button" data-filter="forecasting">Forecasting</button>
-          <button class="filter-pill" type="button" data-filter="engineering">Data engineering</button>
-          <button class="filter-pill" type="button" data-filter="trading">Trading</button>
+          <button class="filter-pill" type="button" data-filter="engineering">Data Engineering</button>
           <button class="filter-pill" type="button" data-filter="dashboards">Dashboards</button>
+          <button class="filter-pill" type="button" data-filter="trading">Trading</button>
         </div>
         <div class="project-grid" id="projectGrid"></div>
       </section>
 
-      <section id="experience" class="experience-section career-section" aria-labelledby="experience-title">
-        <div class="section-heading">
+      <section id="experience" class="section experience-section career-section" aria-labelledby="experience-title">
+        <div class="section-heading reveal">
           <p class="eyebrow">Career timeline</p>
-          <h2 id="experience-title">A year-by-year path from energy systems to market intelligence</h2>
-          <p class="section-intro">
-            Select a year to see how each role builds into the current energy market analytics focus.
-          </p>
+          <h2 id="experience-title">Business Analyst to Energy Systems to Market Analytics</h2>
+          <p class="section-intro">Select a year to see how each role builds toward energy market intelligence and dashboard-led decision support.</p>
         </div>
-        <div class="career-visual">
+        <div class="career-visual reveal">
           <div class="career-year-rail" role="tablist" aria-label="Career years">
             <button class="career-year-tab active" type="button" data-career="2026" role="tab" aria-selected="true">
-              <span>2026</span>
-              <small>NEM research</small>
+              <span>2026</span><small>NEM research</small>
             </button>
             <button class="career-year-tab" type="button" data-career="2025" role="tab" aria-selected="false">
-              <span>2025</span>
-              <small>Business analytics</small>
+              <span>2025</span><small>Business analytics</small>
             </button>
             <button class="career-year-tab" type="button" data-career="2022" role="tab" aria-selected="false">
-              <span>2022</span>
-              <small>ICT dashboards</small>
+              <span>2022</span><small>ICT dashboards</small>
             </button>
             <button class="career-year-tab" type="button" data-career="2020" role="tab" aria-selected="false">
-              <span>2020</span>
-              <small>Energy systems</small>
+              <span>2020</span><small>Energy systems</small>
             </button>
           </div>
-
           <div class="career-main">
             <article class="career-focus-card" id="careerFocus" aria-live="polite"></article>
             <div class="career-path" aria-label="Career progression">
@@ -228,7 +264,7 @@
                 <div>
                   <span class="timeline-date">Mar 2026 - Present</span>
                   <h3>Research Assistant, Transforming Energy Markets Research Centre</h3>
-                  <p>AEMO market datasets, forecasting workflows, renewable integration, dispatch pricing, and market volatility analysis.</p>
+                  <p>Domain: NEM research, AEMO datasets, forecasting, dispatch pricing, renewable integration, and market volatility.</p>
                 </div>
               </article>
               <article class="career-node" data-career="2025">
@@ -236,7 +272,7 @@
                 <div>
                   <span class="timeline-date">Mar 2025 - Apr 2026</span>
                   <h3>Business Analyst - Finance & Operations, Western Sydney University</h3>
-                  <p>Power BI dashboards, finance and operations reporting, workflow analysis, and stakeholder decision support.</p>
+                  <p>Domain: Power BI reporting, workflow analytics, finance and operational performance visibility.</p>
                 </div>
               </article>
               <article class="career-node" data-career="2022">
@@ -244,7 +280,7 @@
                 <div>
                   <span class="timeline-date">Nov 2022 - Jun 2024</span>
                   <h3>ICT Business Analyst, CentraHub Pvt Ltd</h3>
-                  <p>SQL workflow automation, KPI dashboards, multi-region operational reporting, and a 35% response-time reduction.</p>
+                  <p>Domain: SQL automation, KPI dashboards, stakeholder reporting, and multi-region operations.</p>
                 </div>
               </article>
               <article class="career-node" data-career="2020">
@@ -252,7 +288,7 @@
                 <div>
                   <span class="timeline-date">Sep 2020 - Nov 2022</span>
                   <h3>Senior Project Engineer - Energy Systems, Indian Immunologicals Pvt Ltd</h3>
-                  <p>HVAC and utility optimisation, industrial energy monitoring, SCADA/PLC exposure, validation, and compliance documentation.</p>
+                  <p>Domain: industrial utilities, HVAC optimisation, SCADA/PLC monitoring, validation, and compliance.</p>
                 </div>
               </article>
             </div>
@@ -260,112 +296,94 @@
         </div>
       </section>
 
-      <section id="education" class="education-section" aria-labelledby="education-title">
-        <div class="section-heading">
+      <section id="education" class="section education-section" aria-labelledby="education-title">
+        <div class="section-heading reveal">
           <p class="eyebrow">Education and market training</p>
-          <h2 id="education-title">Academic foundation for analytics, power systems, and project delivery</h2>
+          <h2 id="education-title">Analytics foundation with power systems depth</h2>
         </div>
-        <div class="education-grid">
+        <div class="education-grid reveal">
           <article class="education-card featured">
-            <span class="education-year">May 2026</span>
+            <span class="education-year">Formal education</span>
             <h3>Master of Business Analytics</h3>
-            <p>Macquarie University, Sydney</p>
+            <p>Macquarie University, Sydney - May 2026</p>
             <span class="education-tag">Analytics foundation</span>
           </article>
           <article class="education-card">
-            <span class="education-year">May 2024</span>
-            <h3>PG Diploma in Project Management</h3>
-            <p>Symbiosis College of Distance Learning, India</p>
-            <span class="education-tag">Delivery and governance</span>
+            <span class="education-year">Power systems</span>
+            <h3>B.Tech Power Engineering</h3>
+            <p>GMR Institute of Technology, India - May 2019</p>
+            <span class="education-tag">Energy systems base</span>
           </article>
           <article class="education-card">
-            <span class="education-year">May 2019</span>
-            <h3>Bachelor of Technology in Power Engineering</h3>
-            <p>GMR Institute of Technology, India</p>
-            <span class="education-tag">Power systems base</span>
+            <span class="education-year">Delivery</span>
+            <h3>PG Diploma in Project Management</h3>
+            <p>Symbiosis College of Distance Learning, India - May 2024</p>
+            <span class="education-tag">Governance and delivery</span>
           </article>
           <article class="education-card training">
             <span class="education-year">Market training</span>
-            <h3>AEMO and PLEXOS</h3>
+            <h3>AEMO NEM + PLEXOS Cloud</h3>
             <p>NEM Foundations eLearning Program and Modelling Power Systems Using PLEXOS Cloud.</p>
             <span class="education-tag">NEM modelling exposure</span>
           </article>
         </div>
       </section>
 
-      <section id="roadmap" class="roadmap-section" aria-labelledby="roadmap-title">
-        <div class="section-heading">
-          <p class="eyebrow">Capstone direction</p>
-          <h2 id="roadmap-title">Research pathway toward market decision intelligence</h2>
+      <section id="roadmap" class="section roadmap-section" aria-labelledby="roadmap-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Strategic roadmap</p>
+          <h2 id="roadmap-title">Toward an integrated NEM intelligence dashboard</h2>
         </div>
-        <div class="roadmap">
-          <article>
-            <span>Q2 2026</span>
-            <h3>Validate forecasting models</h3>
-            <p>Finalise model validation and ingest Q1 2026 price data for updated benchmark indices.</p>
-          </article>
-          <article>
-            <span>Q3 2026</span>
-            <h3>Integrate dashboard workflows</h3>
-            <p>Package Streamlit, forecasting, and bid-stack tools for internal testing and applied analytics review.</p>
-          </article>
-          <article>
-            <span>Q4 2026</span>
-            <h3>Complete capstone research</h3>
-            <p>Submit findings on NSW wholesale electricity market drivers and operational market behaviour.</p>
-          </article>
-          <article>
-            <span>Future</span>
-            <h3>Extend into storage and FCAS</h3>
-            <p>Model BESS dispatch arbitrage, FCAS co-optimisation, virtual power plant dispatch, and trading paths.</p>
-          </article>
+        <div class="roadmap product-roadmap reveal">
+          <article><span>Phase 1</span><h3>AEMO ETL foundation</h3><p>Build trusted data ingestion, validation, and PostgreSQL-ready market tables.</p></article>
+          <article><span>Phase 2</span><h3>Price and generator analytics</h3><p>Analyse regional divergence, generator response, dispatch behaviour, and market events.</p></article>
+          <article><span>Phase 3</span><h3>Constraint intelligence</h3><p>Surface binding constraints, congestion drivers, and price separation signals.</p></article>
+          <article><span>Phase 4</span><h3>BESS and trading analytics</h3><p>Extend into storage arbitrage, bid-stack tooling, FCAS paths, and trading scenarios.</p></article>
+          <article><span>Phase 5</span><h3>Integrated NEM intelligence</h3><p>Combine pipelines, models, dashboards, and market narratives into one decision layer.</p></article>
         </div>
       </section>
 
-      <section class="skills-section" aria-labelledby="skills-title">
-        <div class="section-heading">
-          <p class="eyebrow">Capability map</p>
-          <h2 id="skills-title">Analytics stack</h2>
+      <section class="section skills-section" aria-labelledby="skills-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Capability pillars</p>
+          <h2 id="skills-title">Energy analytics stack</h2>
         </div>
-        <div class="skill-matrix">
-          <div>
-            <h3>Energy markets</h3>
-            <p>AEMO NEM data, dispatch pricing, NEM fundamentals, FCAS markets, demand analysis, renewable integration, battery storage analytics.</p>
-          </div>
-          <div>
-            <h3>Forecasting</h3>
-            <p>Time-series modelling, feature engineering, scenario analysis, market behaviour analysis, XGBoost, LSTM, ARIMA.</p>
-          </div>
-          <div>
-            <h3>Data systems</h3>
-            <p>Python, Pandas, NumPy, SQL, PostgreSQL, JavaScript, ETL validation, audit logs, automated retries.</p>
-          </div>
-          <div>
-            <h3>Visualisation</h3>
-            <p>Power BI, DAX, Tableau, operational reporting, executive dashboards, research-facing analytical views.</p>
-          </div>
+        <div class="skill-matrix reveal">
+          <div><h3>Energy Market Analytics</h3><p>AEMO NEM data, dispatch pricing, FCAS markets, renewable integration, price volatility, battery analytics.</p><span class="skill-bar"><i style="width: 92%"></i></span></div>
+          <div><h3>Data Engineering</h3><p>Python, SQL, PostgreSQL, Pandas, NumPy, ETL validation, auditability, reusable market data structures.</p><span class="skill-bar"><i style="width: 88%"></i></span></div>
+          <div><h3>Forecasting & ML</h3><p>Time-series features, ARIMA, XGBoost, LSTM, scenario analysis, market behaviour modelling.</p><span class="skill-bar"><i style="width: 82%"></i></span></div>
+          <div><h3>Dashboarding</h3><p>Power BI, DAX, Tableau, stakeholder reporting, operational dashboards, visual market narratives.</p><span class="skill-bar"><i style="width: 90%"></i></span></div>
+          <div><h3>Business Analysis</h3><p>Workflow analysis, requirements, executive communication, operations planning, decision-support storytelling.</p><span class="skill-bar"><i style="width: 86%"></i></span></div>
         </div>
       </section>
 
       <section id="contact" class="contact-section" aria-labelledby="contact-title">
         <div>
-          <p class="eyebrow">Available for energy analytics, forecasting, and market intelligence roles</p>
-          <h2 id="contact-title">Let the portfolio speak before the interview starts.</h2>
+          <p class="eyebrow">Open to roles in Australia</p>
+          <h2 id="contact-title">Energy Market Analyst / Data Analyst / Forecasting Analyst</h2>
+          <p>Ready to contribute across NEM analytics, market intelligence dashboards, forecasting, and decision-support reporting.</p>
         </div>
         <div class="contact-links">
-          <a href="mailto:vivek.aryasomayajula@gmail.com">vivek.aryasomayajula@gmail.com</a>
-          <a href="tel:+61425177033">0425 177 033</a>
+          <a href="mailto:vivek.aryasomayajula@gmail.com">Email</a>
           <a href="https://linkedin.com/in/vivek-energy-analytics" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/Vivekarya05" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="assets/Vivek_Bharadwaj_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
         </div>
       </section>
     </main>
 
+    <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close project details">Close</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
     <footer>
       <span>Vivek Bharadwaj Aryasomayajula</span>
-      <span>Energy Market Analytics Portfolio</span>
+      <span>Energy Market Intelligence Portfolio</span>
     </footer>
 
-    <script src="app.js?v=career-polish-5"></script>
+    <script src="app.js?v=premium-command-centre-6"></script>
   </body>
 </html>
