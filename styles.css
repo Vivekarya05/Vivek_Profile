@@ -88,8 +88,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.9rem);
-  line-height: 0.92;
+  font-size: clamp(2.45rem, 5.3vw, 4.6rem);
+  line-height: 0.98;
 }
 
 h1 span {
@@ -213,7 +213,7 @@ body.light .site-header {
 .command-centre {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(410px, 1.1fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(410px, 1.18fr);
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
   width: min(100%, 1360px);
@@ -235,7 +235,7 @@ body.light .site-header {
 }
 
 .hero-copy {
-  max-width: 760px;
+  max-width: 680px;
 }
 
 .eyebrow {
