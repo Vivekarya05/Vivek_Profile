@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive digital CV and energy market analytics portfolio for Vivek Bharadwaj Aryasomayajula."
+    />
+    <title>Vivek Bharadwaj | Energy Market Analytics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Vivek profile home">
+        <span class="brand-mark">VB</span>
+        <span>Energy Analytics</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="dashboard-hero" aria-labelledby="profile-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Australian NEM analytics | Forecasting | Trading intelligence</p>
+          <h1 id="profile-title">
+            <span>Vivek Bharadwaj</span>
+            <span>Aryasomayajula</span>
+          </h1>
+          <p class="lead">
+            Energy Market Analyst building practical intelligence from AEMO datasets, time-series forecasting,
+            renewable integration analysis, and BESS trading strategy workflows.
+          </p>
+          <div class="hero-actions" aria-label="Profile actions">
+            <a class="button primary" href="assets/Vivek_Bharadwaj_CV.pdf" target="_blank" rel="noreferrer">
+              Download CV
+            </a>
+            <a class="button" href="assets/Energy_Market_Analytics_Portfolio.pdf" target="_blank" rel="noreferrer">
+              View Portfolio Deck
+            </a>
+            <a class="button ghost" href="https://vivekarya05.github.io/nemweb-etl-pipeline/" target="_blank" rel="noreferrer">
+              ETL Demo
+            </a>
+          </div>
+        </div>
+
+        <aside class="market-console" aria-label="Energy market profile snapshot">
+          <div class="console-top">
+            <div>
+              <span class="status-dot"></span>
+              <span class="console-label">Research focus</span>
+            </div>
+            <span class="console-tag">NEM</span>
+          </div>
+          <div class="signal-grid">
+            <div class="signal-card">
+              <span class="signal-value">5-min</span>
+              <span class="signal-label">dispatch price analytics</span>
+            </div>
+            <div class="signal-card">
+              <span class="signal-value">AEMO</span>
+              <span class="signal-label">market data pipelines</span>
+            </div>
+            <div class="signal-card">
+              <span class="signal-value">BESS</span>
+              <span class="signal-label">arbitrage simulations</span>
+            </div>
+            <div class="signal-card">
+              <span class="signal-value">35%</span>
+              <span class="signal-label">workflow response-time reduction</span>
+            </div>
+          </div>
+          <canvas id="marketChart" width="720" height="360" aria-label="Animated energy market signal chart"></canvas>
+        </aside>
+      </section>
+
+      <section class="metrics-band" aria-label="Portfolio highlights">
+        <div>
+          <strong>Python, SQL, PostgreSQL</strong>
+          <span>Data engineering and validation</span>
+        </div>
+        <div>
+          <strong>XGBoost, LSTM, ARIMA</strong>
+          <span>Demand and price forecasting</span>
+        </div>
+        <div>
+          <strong>Power BI, DAX, Tableau</strong>
+          <span>Decision dashboards and reporting</span>
+        </div>
+        <div>
+          <strong>PLEXOS Cloud</strong>
+          <span>Market modelling exposure</span>
+        </div>
+      </section>
+
+      <section class="lab-section" aria-labelledby="lab-title">
+        <div class="section-heading">
+          <p class="eyebrow">Market intelligence lab</p>
+          <h2 id="lab-title">From raw market data to operating insight</h2>
+        </div>
+        <div class="lab-grid">
+          <div class="lab-controls" role="tablist" aria-label="Analytics focus">
+            <button class="lab-tab active" type="button" data-mode="pipeline" role="tab" aria-selected="true">
+              Data pipeline
+            </button>
+            <button class="lab-tab" type="button" data-mode="forecasting" role="tab" aria-selected="false">
+              Forecasting
+            </button>
+            <button class="lab-tab" type="button" data-mode="trading" role="tab" aria-selected="false">
+              BESS strategy
+            </button>
+            <button class="lab-tab" type="button" data-mode="research" role="tab" aria-selected="false">
+              Capstone
+            </button>
+          </div>
+          <div class="lab-panel" id="labPanel" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="projects-title">Projects with energy-market signal</h2>
+        </div>
+        <div class="filter-row" aria-label="Project filters">
+          <button class="filter-pill active" type="button" data-filter="all">All</button>
+          <button class="filter-pill" type="button" data-filter="forecasting">Forecasting</button>
+          <button class="filter-pill" type="button" data-filter="engineering">Data engineering</button>
+          <button class="filter-pill" type="button" data-filter="trading">Trading</button>
+          <button class="filter-pill" type="button" data-filter="dashboards">Dashboards</button>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section id="experience" class="experience-section" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title">A profile built across energy systems, analytics, and operations</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span class="timeline-date">Mar 2026 - Present</span>
+            <h3>Research Assistant, Transforming Energy Markets Research Centre</h3>
+            <p>
+              Maintains large-scale AEMO electricity datasets, supports forecasting and market modelling workflows,
+              and develops analytical reporting for renewable integration, dispatch pricing, demand trends, and market volatility.
+            </p>
+          </article>
+          <article>
+            <span class="timeline-date">Mar 2025 - Apr 2026</span>
+            <h3>Business Analyst - Finance & Operations, Western Sydney University</h3>
+            <p>
+              Built Power BI dashboards for financial and operational visibility, analysed workflows, and supported
+              stakeholder decision-making with data-driven insights.
+            </p>
+          </article>
+          <article>
+            <span class="timeline-date">Nov 2022 - Jun 2024</span>
+            <h3>ICT Business Analyst, CentraHub Pvt Ltd</h3>
+            <p>
+              Automated SQL-driven workflows, reduced response times by 35%, and delivered KPI dashboards across
+              India, Middle East, and Canada operations.
+            </p>
+          </article>
+          <article>
+            <span class="timeline-date">Sep 2020 - Nov 2022</span>
+            <h3>Senior Project Engineer - Energy Systems, Indian Immunologicals Pvt Ltd</h3>
+            <p>
+              Optimised HVAC and energy-intensive utilities, monitored industrial energy performance, and worked with
+              SCADA/PLC systems for operations and compliance.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="roadmap" class="roadmap-section" aria-labelledby="roadmap-title">
+        <div class="section-heading">
+          <p class="eyebrow">Capstone direction</p>
+          <h2 id="roadmap-title">Research pathway toward market decision intelligence</h2>
+        </div>
+        <div class="roadmap">
+          <article>
+            <span>Q2 2026</span>
+            <h3>Validate forecasting models</h3>
+            <p>Finalise model validation and ingest Q1 2026 price data for updated benchmark indices.</p>
+          </article>
+          <article>
+            <span>Q3 2026</span>
+            <h3>Integrate dashboard workflows</h3>
+            <p>Package Streamlit, forecasting, and bid-stack tools for internal testing and applied analytics review.</p>
+          </article>
+          <article>
+            <span>Q4 2026</span>
+            <h3>Complete capstone research</h3>
+            <p>Submit findings on NSW wholesale electricity market drivers and operational market behaviour.</p>
+          </article>
+          <article>
+            <span>Future</span>
+            <h3>Extend into storage and FCAS</h3>
+            <p>Model BESS dispatch arbitrage, FCAS co-optimisation, virtual power plant dispatch, and trading paths.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills-section" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="eyebrow">Capability map</p>
+          <h2 id="skills-title">Analytics stack</h2>
+        </div>
+        <div class="skill-matrix">
+          <div>
+            <h3>Energy markets</h3>
+            <p>AEMO NEM data, dispatch pricing, NEM fundamentals, FCAS markets, demand analysis, renewable integration, battery storage analytics.</p>
+          </div>
+          <div>
+            <h3>Forecasting</h3>
+            <p>Time-series modelling, feature engineering, scenario analysis, market behaviour analysis, XGBoost, LSTM, ARIMA.</p>
+          </div>
+          <div>
+            <h3>Data systems</h3>
+            <p>Python, Pandas, NumPy, SQL, PostgreSQL, JavaScript, ETL validation, audit logs, automated retries.</p>
+          </div>
+          <div>
+            <h3>Visualisation</h3>
+            <p>Power BI, DAX, Tableau, operational reporting, executive dashboards, research-facing analytical views.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Available for energy analytics, forecasting, and market intelligence roles</p>
+          <h2 id="contact-title">Let the portfolio speak before the interview starts.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:vivek.aryasomayajula@gmail.com">vivek.aryasomayajula@gmail.com</a>
+          <a href="tel:+61425177033">0425 177 033</a>
+          <a href="https://linkedin.com/in/vivek-energy-analytics" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/Vivekarya05" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Vivek Bharadwaj Aryasomayajula</span>
+      <span>Energy Market Analytics Portfolio</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
