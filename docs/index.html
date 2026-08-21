@@ -8,7 +8,7 @@
       content="Interactive digital CV and energy market analytics portfolio for Vivek Bharadwaj Aryasomayajula."
     />
     <title>Vivek Bharadwaj | Energy Market Intelligence Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=premium-command-centre-6" />
+    <link rel="stylesheet" href="styles.css?v=dual-profile-7" />
   </head>
   <body>
     <header class="site-header">
@@ -16,7 +16,7 @@
         <span class="brand-mark">VB</span>
         <span>
           <strong>Vivek Analytics</strong>
-          <small>NEM intelligence portfolio</small>
+          <small id="brand-subtitle">NEM intelligence portfolio</small>
         </span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -49,6 +49,14 @@
             I convert AEMO/NEM market data into decision-ready insights across price behaviour, constraints,
             generator performance, forecasting, and storage analytics.
           </p>
+          <div class="profile-switcher" role="tablist" aria-label="Portfolio profile mode">
+            <button class="profile-tab active" type="button" data-profile="energy" role="tab" aria-selected="true">
+              Energy Analyst
+            </button>
+            <button class="profile-tab" type="button" data-profile="ict" role="tab" aria-selected="false">
+              ICT Business Analyst
+            </button>
+          </div>
           <div class="hero-actions" aria-label="Profile actions">
             <a class="button primary" href="#dashboards">View Projects</a>
             <a class="button" href="assets/Vivek_Bharadwaj_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
@@ -384,6 +392,6 @@
       <span>Energy Market Intelligence Portfolio</span>
     </footer>
 
-    <script src="app.js?v=premium-command-centre-6"></script>
+    <script src="app.js?v=dual-profile-7"></script>
   </body>
 </html>

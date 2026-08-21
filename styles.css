@@ -1086,3 +1086,63 @@ footer {
     flex-direction: column;
   }
 }
+
+
+.profile-switcher {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 6px;
+}
+
+.profile-tab {
+  min-height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 950;
+}
+
+.profile-tab.active {
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
+  color: #031014;
+}
+
+body[data-profile="ict"] .hero-grid-bg,
+body[data-profile="ict"] .market-console,
+body[data-profile="ict"] .analytics-card.featured,
+body[data-profile="ict"] .career-focus-card {
+  border-color: rgba(244, 189, 90, 0.34);
+}
+
+body[data-profile="ict"] .button.primary,
+body[data-profile="ict"] .filter-pill.active,
+body[data-profile="ict"] .lab-tab.active,
+body[data-profile="ict"] .card-actions a:first-child,
+body[data-profile="ict"] .profile-tab.active {
+  background: linear-gradient(135deg, var(--amber), var(--cyan));
+  color: #071115;
+}
+
+body[data-profile="ict"] .eyebrow,
+body[data-profile="ict"] .console-label,
+body[data-profile="ict"] .console-tag,
+body[data-profile="ict"] .link-type,
+body[data-profile="ict"] .timeline-date,
+body[data-profile="ict"] .roadmap span {
+  color: var(--amber);
+}
+
+@media (max-width: 760px) {
+  .profile-switcher {
+    display: grid;
+    width: 100%;
+    border-radius: 16px;
+  }
+}
