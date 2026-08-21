@@ -1,8 +1,11 @@
 const profileContent = {
   energy: {
+    brandTitle: "Vivek Energy Analytics",
     brandSubtitle: "NEM intelligence portfolio",
     hero: {
       eyebrow: "Energy market analyst command centre",
+      consoleLabel: "Live NEM market signal",
+      consoleTag: "NEM",
       role: "Energy Market Analyst | NEM Analytics | AEMO Data | Forecasting | BESS",
       lead:
         "I convert AEMO/NEM market data into decision-ready insights across price behaviour, constraints, generator performance, forecasting, and storage analytics.",
@@ -260,9 +263,12 @@ const profileContent = {
     },
   },
   ict: {
-    brandSubtitle: "BA transformation portfolio",
+    brandTitle: "Vivek ICT Business Analyst",
+    brandSubtitle: "ICT transformation portfolio",
     hero: {
-      eyebrow: "ICT business analyst command centre",
+      eyebrow: "ICT business analyst portfolio",
+      consoleLabel: "Enterprise delivery signal",
+      consoleTag: "BA",
       role: "ICT Business Analyst | Business Transformation | SaaS/COTS | CRM/ERP | UAT",
       lead:
         "I translate business needs into clear requirements, process models, system integrations, UAT outcomes, reporting dashboards, and business-ready technology solutions.",
@@ -284,12 +290,12 @@ const profileContent = {
       eyebrow: "Business analyst portfolio",
       title: "Enterprise transformation work framed as BA case studies",
       intro:
-        "This mode reframes the portfolio for ICT Business Analyst roles while preserving the Energy Analytics version as the default tab.",
+        "A separate ICT Business Analyst profile for enterprise transformation, systems delivery, UAT, reporting, and stakeholder-ready business change.",
     },
     dashboards: [
       {
         key: "enterprise-transformation",
-        visual: "etl-visual",
+        visual: "systems-visual",
         type: "Enterprise transformation",
         title: "SaaS/COTS CRM & ERP Delivery",
         problem: "Problem: business teams need clear requirements and delivery alignment across enterprise systems.",
@@ -299,7 +305,7 @@ const profileContent = {
       },
       {
         key: "process-mapping",
-        visual: "constraint-visual",
+        visual: "process-visual",
         type: "Process analysis",
         title: "Current-State to Future-State Process Mapping",
         problem: "Problem: operational workflows need gap analysis before technology change.",
@@ -308,7 +314,7 @@ const profileContent = {
       },
       {
         key: "uat-readiness",
-        visual: "spread-visual",
+        visual: "uat-visual",
         type: "Testing and readiness",
         title: "UAT, Defect Management & Business Readiness",
         problem: "Problem: business acceptance needs structured testing and traceability.",
@@ -317,7 +323,7 @@ const profileContent = {
       },
       {
         key: "operations-reporting",
-        visual: "generator-visual",
+        visual: "reporting-visual",
         type: "BI and operations",
         title: "Operational KPI Dashboards & SQL Automation",
         problem: "Problem: operations teams need better visibility and faster response.",
@@ -565,7 +571,6 @@ const modalClose = document.querySelector(".modal-close");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
-const profileTabs = document.querySelectorAll(".profile-tab");
 
 function currentProfile() {
   return profileContent[activeProfile];
@@ -581,16 +586,13 @@ function renderProfile(profile = "energy") {
   activeFilter = "all";
   const data = currentProfile();
   document.body.dataset.profile = profile;
-  profileTabs.forEach((tab) => {
-    const isActive = tab.dataset.profile === profile;
-    tab.classList.toggle("active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-  });
-
+  setText("#brand-title", data.brandTitle);
   setText("#brand-subtitle", data.brandSubtitle);
   setText(".hero-copy .eyebrow", data.hero.eyebrow);
   setText(".role-line", data.hero.role);
   setText(".lead", data.hero.lead);
+  setText(".console-label", data.hero.consoleLabel);
+  setText(".console-tag", data.hero.consoleTag);
   setText(".hero-actions .button.primary", data.hero.primaryCta);
 
   document.querySelectorAll(".signal-card").forEach((card, index) => {
@@ -605,7 +607,7 @@ function renderProfile(profile = "energy") {
   });
 
   const metricsBand = document.querySelector(".metrics-band");
-  metricsBand.innerHTML = data.metricsBand.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join("");
+  if (metricsBand) metricsBand.innerHTML = data.metricsBand.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join("");
 
   setText("#dashboards .eyebrow", data.dashboardHeading.eyebrow);
   setText("#dashboard-title", data.dashboardHeading.title);
@@ -905,7 +907,6 @@ document.addEventListener("click", (event) => {
   if (detailButton) openProjectModal(Number(detailButton.dataset.projectIndex));
 });
 
-profileTabs.forEach((tab) => tab.addEventListener("click", () => renderProfile(tab.dataset.profile)));
 careerTabs.forEach((tab) => tab.addEventListener("click", () => renderCareer(tab.dataset.career)));
 careerNodes.forEach((node) => node.addEventListener("click", () => renderCareer(node.dataset.career)));
 modalClose?.addEventListener("click", closeProjectModal);
@@ -923,5 +924,5 @@ themeToggle?.addEventListener("click", () => {
 });
 window.addEventListener("scroll", updateActiveNav, { passive: true });
 
-renderProfile("energy");
+renderProfile(document.body.dataset.profile || "energy");
 drawChart();
